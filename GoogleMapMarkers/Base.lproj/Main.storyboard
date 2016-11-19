@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapController" customModule="GoogleMapMarkers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouj-3a-EfX" customClass="MapView" customModule="GoogleMapMarkers" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aph-kL-vIR">
+                                <rect key="frame" x="16" y="35" width="174" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="F9L-eW-agn"/>
+                                    <constraint firstAttribute="width" constant="174" id="hdX-at-gZG"/>
+                                </constraints>
+                                <state key="normal" title="Определить локацию">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMyLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cWi-3b-QzV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2z-Lc-z9O">
+                                <rect key="frame" x="16" y="73" width="174" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="A31-Iu-cTu"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZKY-K8-hXR"/>
+                                </constraints>
+                                <state key="normal" title="Поставить маркеры">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="putMarkers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3oh-9g-iWb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Aph-kL-vIR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="0QZ-s0-WkC"/>
+                            <constraint firstItem="B2z-Lc-z9O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="46E-5z-Rhw"/>
+                            <constraint firstItem="Aph-kL-vIR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7Y6-JN-bRF"/>
+                            <constraint firstItem="B2z-Lc-z9O" firstAttribute="top" secondItem="Aph-kL-vIR" secondAttribute="bottom" constant="8" id="EHM-jh-EQ9"/>
+                            <constraint firstItem="ouj-3a-EfX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KDn-W8-bYf"/>
+                            <constraint firstItem="ouj-3a-EfX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KHh-TO-OyO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ouj-3a-EfX" secondAttribute="bottom" id="Vka-j9-1aW"/>
+                            <constraint firstAttribute="trailing" secondItem="ouj-3a-EfX" secondAttribute="trailing" id="sQe-E6-5HU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="ouj-3a-EfX" id="JLr-ch-e6B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="54.422788605697157"/>
+        </scene>
+    </scenes>
+</document>
