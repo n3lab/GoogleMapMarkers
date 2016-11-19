@@ -12,12 +12,12 @@ import GoogleMaps
 class MapView: GMSMapView, CLLocationManagerDelegate {
 
     func drawRandomMarkers(latitude: CLLocationDegrees,longitude: CLLocationDegrees, howMany: Int, radiusFromMyLocation: Int) {
-        for _ in 1...howMany {
-            let markerCoordinates = generateRandomMarker(myLocationCoordinates: CLLocationCoordinate2D(latitude: latitude,longitude: longitude), radiusFromMyLocation: Double(radiusFromMyLocation))
-            let position = markerCoordinates
+            for _ in 1...howMany {
+                let markerCoordinates = generateRandomMarker(myLocationCoordinates: CLLocationCoordinate2D(latitude: latitude,longitude: longitude), radiusFromMyLocation: Double(radiusFromMyLocation))
+                let position = markerCoordinates
             
-            self.addRandomMarker(position: position)
-        }
+                self.addRandomMarker(position: position)
+            }
     }
 
     //helper method
@@ -56,9 +56,11 @@ class MapView: GMSMapView, CLLocationManagerDelegate {
     }
     
     func addRandomMarker(position: CLLocationCoordinate2D) {
-        let marker = GMSMarker(position: position)
-        marker.title = "Random marker"
-        marker.icon = GMSMarker.markerImage(with: UIColor.gray)
-        marker.map = self
+        DispatchQueue.main.async {
+            let marker = GMSMarker(position: position)
+            marker.title = "Random marker"
+            marker.icon = GMSMarker.markerImage(with: UIColor.gray)
+            marker.map = self
+        }
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 import GoogleMaps
 
 class MyLocation {
+    static let sharedInstance = MyLocation()
+    
     var latitude = CLLocationDegrees()
     var longitude = CLLocationDegrees()
     var radiusToSeeMarkers = Int()

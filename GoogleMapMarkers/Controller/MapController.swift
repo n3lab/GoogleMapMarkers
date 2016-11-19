@@ -14,7 +14,7 @@ class MapController: UIViewController, GMSMapViewDelegate {
     
     @IBOutlet var mapView: MapView!
     var locationManager = CLLocationManager()
-    var myLocation = MyLocation()
+    var myLocation = MyLocation.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
